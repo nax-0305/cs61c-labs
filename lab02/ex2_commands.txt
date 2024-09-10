@@ -3,3 +3,32 @@
 # Lines starting with # are comments, feel free to add any to document your commands
 
 # Please add your commands below this line
+
+#start; n/a; begin running the program and stop at line 1 in main
+
+#step; s; execute the current line of function(this command will step into function)
+
+#next; n; execute the current line of function(this command will not step into function)
+
+#finish; fin; executes the remainder of the current function and returns to the calling function
+
+#print [arg]; p; prints the value of the argument
+
+#quit; q; exits gdb 
+
+start
+n
+n
+n
+n
+step
+s
+p password
+fin
+n
+s
+n
+n
+print meets_len_req
+print length
+q

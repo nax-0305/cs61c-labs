@@ -3,3 +3,21 @@
 # Lines starting with # are comments, feel free to add any to document your commands
 
 # Please add your commands below this line
+
+# break [line num or function name]; b; set a breakpoint at the specified location, use filename.c:linenum to set a breakpoint in a specific file
+# conditional breaki (ex: break 3 if n==4); (ex: b 3 if n==4); set a breakpoint at the specified location only if a given condition is met
+# run; r; execute the program until termination or reaching a breakpoint
+# continue; c; continues the execution of a program that was paused
+# backtrace; bt; print one line per frame for frames in the stack
+
+break check_number
+run
+step step
+backtrace
+break 31 if letter == '0'
+continue
+print letter
+print is_in_range
+print lower
+print upper
+quit
