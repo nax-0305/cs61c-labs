@@ -37,20 +37,20 @@ int main() {
 
   // TODO: create a pointer that can point to a Student struct
   //       do not allocate any memory
-  Student** student2_ptr;
+  Student* student2_ptr;
 
   // TODO: use create_student_2 to populate the student2_ptr
   //       where the student has id of 6
   // Hint: compare the type of student2_ptr with the type of
   //       the argument for create_student_2
-  create_student_2(student2_ptr, 6);
+  create_student_2(&student2_ptr, 6);
 
   // TODO: print the id of the student that student2_ptr points to
-  printf("Student 2's ID: %d\n", (*student2_ptr)->id);
+  printf("Student 2's ID: %d\n", student2_ptr->id);
 
   // Free everything allocated with `malloc`
   free(student1_ptr);
-  free(*student2_ptr);
+  free(student2_ptr);
 
   return 0;
 }

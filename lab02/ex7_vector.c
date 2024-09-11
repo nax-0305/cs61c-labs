@@ -46,14 +46,14 @@ vector_t *vector_new() {
     retval = malloc(sizeof(vector_t));
 
     /* Check our return value to make sure we got memory */
-    if (retval = NULL) {
+    if (retval == NULL) {
         allocation_failed();
     }
 
     /* Now we need to initialize our data.
        Since retval->data should be able to dynamically grow,
        what do you need to do? */
-    retval->data = malloc(sizeof(int));
+    retval->data = (int*)malloc(sizeof(int));
 
     /* Check the data attribute of our vector to make sure we got memory */
     if (retval->data == NULL) {
@@ -102,7 +102,7 @@ void vector_set(vector_t *v, size_t loc, int value) {
      */
 
     if (loc >= v->size){
-    	int* temp = malloc(loc * sizeof(int));
+    	int* temp = malloc((loc+1) * sizeof(int));
 	if (temp == NULL) {
 	    allocation_failed();
 	}
@@ -110,9 +110,12 @@ void vector_set(vector_t *v, size_t loc, int value) {
 	for (i=0; i < v->size; i++){
 	    temp[i] = v->data[i];
 	}
-	temp[i] = value;
+	temp[loc] = value;
 	free(v->data);
 	v->data = temp;
-	v->size = loc;
+	v->size = loc + 1;
+    }
+    else {
+    	v->data[loc] = value;
     }
 }
